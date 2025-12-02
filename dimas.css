@@ -1,0 +1,62 @@
+/* Import Font Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap');
+
+body {
+    /* Latar Belakang: Biru Muda Lembut */
+    background-color: #ADD8E6; /* Light Blue */
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* Centering Horizontal */
+    align-items: center;    /* Centering Vertical */
+    overflow: hidden; /* Menyembunyikan potensi scrollbar dari hiasan latar */
+}
+
+/* Hiasan Latar Geometris Abstrak (menggunakan pseudo-element) */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Membuat Pola Sederhana (misalnya, dot grid) */
+    background-image: radial-gradient(#ffffff 1px, transparent 1px);
+    background-size: 30px 30px;
+    /* Opasitas Sangat Rendah */
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Memastikan teks di atas hiasan latar */
+}
+
+.hero-text {
+    /* Font dan Warna Teks */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15vw; /* Ukuran besar dan responsif */
+    font-weight: 800;
+    color: #444444; /* Abu-abu Gelap */
+    
+    /* Efek 3D Ringan menggunakan Text Shadow */
+    text-shadow: 
+        1px 1px 0px rgba(0, 0, 0, 0.1),
+        2px 2px 0px rgba(0, 0, 0, 0.1),
+        3px 3px 0px rgba(0, 0, 0, 0.08),
+        4px 4px 0px rgba(0, 0, 0, 0.05); /* Memberi kesan terangkat */
+    
+    /* Memastikan responsif pada mobile */
+    margin: 0;
+    line-height: 1; 
+    padding: 20px;
+}
+
+/* Media Query untuk mengatur ukuran font agar tidak terlalu besar di desktop */
+@media (min-width: 1024px) {
+    .hero-text {
+        font-size: 10rem; /* Ukuran tetap besar di desktop */
+    }
+}
